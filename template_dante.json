@@ -9547,6 +9547,70 @@
             "description": "No-code middleware for industrial applications",
             "note": "More information about the <a href=\"https://www.opc-router.com/terms-of-use-and-eula/?utm_source=DockerHub_runtime&utm_medium=click&utm_campaign=TermsOfUseAndEula\" target=\"_blank\">EULA</a>.",
             "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/opc-router/docker-compose.yml"
+        },
+        {
+            "type": 1,
+            "title": "Webtop (Ubuntu XFCE/Crashplan)",
+            "name": "Webtop (Ubuntu XFCE/Crashplan)",
+            "note": "Portainer App Templates by Dante Basso (Import to configure the Volume /storage and run sudo ./crashplan/crashplan-install/install.sh after start",
+            "description": "[Webtop](https://github.com/linuxserver/docker-webtop) - Ubuntu XFCE and Crashplan",
+            "categories": [
+                "Utilities"
+            ],
+            "platform": "linux",
+            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+            "image": "linuxserver/webtop:latest",
+            "env": [
+                {
+                    "name": "PUID",
+                    "label": "PUID",
+                    "default": "1024",
+                    "description": "for UserID"
+                },
+                {
+                    "name": "PGID",
+                    "label": "PGID",
+                    "default": "100",
+                    "description": "for GroupID"
+                },
+                {
+                    "name": "TZ",
+                    "label": "TZ",
+                    "default": "America/Sao_Paulo",
+                    "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+                },
+                {
+                    "name": "SUBFOLDER",
+                    "label": "SUBFOLDER",
+                    "default": "/",
+                    "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
+                },
+                {
+                    "name": "TITLE",
+                    "label": "TITLE",
+                    "default": "Webtop",
+                    "description": "String which will be used as page/tab title in the web browser."
+                }
+            ],
+            "ports": [
+                "3000:3000/tcp",
+                "3001:3001/tcp"
+            ],
+            "volumes": [
+                {
+                    "container": "/config",
+                    "bind": "/volume1/docker/webtop/config"
+                },
+                {
+                    "container": "/var/run/docker.sock",
+                    "bind": "/var/run/docker.sock"
+                },
+                {
+                    "container": "/storage",
+                    "bind": "/volume1/docker/webtop/storage"
+                }
+            ],
+            "restart_policy": "unless-stopped"
         }
     ]
 }
