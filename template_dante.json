@@ -9559,7 +9559,7 @@
             ],
             "platform": "linux",
             "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
-            "image": "linuxserver/webtop:latest",
+            "image": "dcbasso/webtop-crashplan:ubuntu-xfce",
             "env": [
                 {
                     "name": "PUID",
