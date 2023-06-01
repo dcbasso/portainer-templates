@@ -9551,7 +9551,7 @@
         {
             "type": 1,
             "title": "Webtop (Ubuntu XFCE/Crashplan)",
-            "name": "Webtop (Ubuntu XFCE/Crashplan)",
+            "name": "webtop-ubuntu-xfce-crashplan)",
             "note": "Portainer App Templates by Dante Basso (Import to configure the Volume /storage and run sudo ./crashplan/crashplan-install/install.sh after start",
             "description": "[Webtop](https://github.com/linuxserver/docker-webtop) - Ubuntu XFCE and Crashplan",
             "categories": [
